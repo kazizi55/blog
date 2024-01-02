@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@react-icons/all-files':
+    specifier: ^4.1.0
+    version: 4.1.0(react@18.0.0)
   next:
     specifier: 14.0.4
     version: 14.0.4(react-dom@18.0.0)(react@18.0.0)
@@ -246,6 +249,14 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@react-icons/all-files@4.1.0(react@18.0.0):
+    resolution: {integrity: sha512-hxBI2UOuVaI3O/BhQfhtb4kcGn9ft12RWAFVMUeNjqqhLsHvFtzIkFaptBJpFDANTKoDfdVoHTKZDlwKCACbMQ==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /@rushstack/eslint-patch@1.6.1:
     resolution: {integrity: sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==}

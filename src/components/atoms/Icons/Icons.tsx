@@ -6,6 +6,9 @@ import { FaTwitter as RawFaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub as RawFaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaEnvelope as RawFaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 import { FaLinkedin as RawFaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaStopwatch as RawFaStopwatch } from "@react-icons/all-files/fa/FaStopwatch";
+import { FaTags as RawFaTags } from "@react-icons/all-files/fa/FaTags";
+import { FaCalendar as RawFaCalendar } from "@react-icons/all-files/fa/FaCalendar";
 
 export const FaHome: React.FC = () => {
   return <RawFaHome className="h-6 w-6" />;
@@ -37,4 +40,16 @@ export const FaEnvelope: React.FC = () => {
 
 export const FaLinkedin: React.FC = () => {
   return <RawFaLinkedin className="h-6 w-6" />;
+};
+
+export const FaStopwatch: React.FC = () => {
+  return <RawFaStopwatch className="h-6 w-6" />;
+};
+
+export const FaTags: React.FC = () => {
+  return <RawFaTags className="h-6 w-6" />;
+};
+
+export const FaCalendar: React.FC = () => {
+  return <RawFaCalendar className="h-6 w-6" />;
 };

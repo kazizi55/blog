@@ -5,14 +5,7 @@ import {
   FaTwitter,
 } from "@/components/atoms/Icons";
 
-type SnsLink = {
-  name: string;
-  href: string;
-  icon: React.ReactElement;
-  ariaLabel: string;
-};
-
-const SNS_LINKS: SnsLink[] = [
+const SNS_LINKS = [
   {
     name: "EMail",
     href: "mailto:kaz.redhot1201@gmail.com",

@@ -1,4 +1,5 @@
 import { FaCalendar, FaStopwatch, FaTags } from "@/components/atoms/Icons";
+import Link from "next/link";
 
 export const ArticleListItem: React.FC = () => {
   return (
@@ -11,7 +12,11 @@ export const ArticleListItem: React.FC = () => {
         />
       </div>
       <div className="space-y-3 sm:col-span-3 py-1">
-        <h2>タイトル</h2>
+        <h2>
+          <Link href="/test" className="hover:underline">
+            タイトル
+          </Link>
+        </h2>
         <div className="flex flex-row gap-2 flex-wrap">
           <div className="flex items-center gap-1">
             <FaCalendar />

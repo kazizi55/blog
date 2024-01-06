@@ -12,6 +12,7 @@ type ArticleDetailProps = {
   frontMatter: FrontMatter;
 };
 
+// TODO: 別ファイルに切り出す
 const mdxComponents = {
   code: (props: JSX.IntrinsicAttributes & { children?: ReactNode }) => (
     <CodeBlock {...props} />
@@ -43,7 +44,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
           </div>
         </div>
       </header>
-      <main>
+      <main className="py-6 leading-7	">
         <MDXRemote {...mdxSource} components={mdxComponents} />
       </main>
     </>

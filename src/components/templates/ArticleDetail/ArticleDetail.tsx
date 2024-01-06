@@ -2,7 +2,7 @@ import { FaCalendar, FaStopwatch, FaTags } from "@/components/atoms/Icons";
 
 export const ArticleDetail: React.FC = () => {
   return (
-    <article>
+    <>
       <header className="mb-2">
         <h1>タイトル</h1>
         <div className="flex flex-row gap-2 flex-wrap my-2">
@@ -20,7 +20,7 @@ export const ArticleDetail: React.FC = () => {
           </div>
         </div>
       </header>
-      <p>記事本文</p>
-    </article>
+      <main>記事本文</main>
+    </>
   );
 };

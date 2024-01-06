@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`${inter.className} bg-white text-black dark:bg-gray-950 dark:text-white flex h-screen flex-col mx-auto max-w-3xl px-4 sm:px-6 xl:px-0`}
       >
         <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>

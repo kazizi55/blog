@@ -1,26 +1,43 @@
-import { FaCalendar, FaStopwatch, FaTags } from "@/components/atoms/Icons";
+"use client";
 
-export const ArticleDetail: React.FC = () => {
+import { FaCalendar, FaTags } from "@/components/atoms/Icons";
+import { ArticleDate } from "@/components/molecules/ArticleDate";
+import { FrontMatter } from "@/types";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+
+type ArticleDetailProps = {
+  source: MDXRemoteSerializeResult;
+  frontMatter: FrontMatter;
+};
+
+export const ArticleDetail: React.FC<ArticleDetailProps> = ({
+  source,
+  frontMatter,
+}) => {
   return (
     <>
       <header className="mb-2">
-        <h1>タイトル</h1>
+        <h1>{frontMatter.title}</h1>
         <div className="flex flex-row gap-2 flex-wrap my-2">
           <div className="flex items-center gap-1">
             <FaCalendar />
-            <span>2024-01-02</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <FaStopwatch />
-            <span>5分で読めます</span>
+            <ArticleDate
+              published={frontMatter.published}
+              updated={frontMatter.updated}
+            />
           </div>
           <div className="flex items-center gap-1">
             <FaTags />
-            <span>#test</span>
+            {/* TODO: タグごとでページ横断で絞り込みできるように */}
+            {frontMatter.tags.map((tag) => (
+              <span key={tag}>#{tag}</span>
+            ))}
           </div>
         </div>
       </header>
-      <main>記事本文</main>
+      <main>
+        <MDXRemote {...source} />
+      </main>
     </>
   );
 };

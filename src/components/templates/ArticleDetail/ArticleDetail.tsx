@@ -2,16 +2,24 @@
 
 import { FaCalendar, FaTags } from "@/components/atoms/Icons";
 import { ArticleDate } from "@/components/molecules/ArticleDate";
+import { CodeBlock } from "@/components/molecules/CodeBlock";
 import { FrontMatter } from "@/types";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { ReactElement, ReactNode } from "react";
 
 type ArticleDetailProps = {
-  source: MDXRemoteSerializeResult;
+  mdxSource: MDXRemoteSerializeResult;
   frontMatter: FrontMatter;
 };
 
+const mdxComponents = {
+  code: (props: JSX.IntrinsicAttributes & { children?: ReactNode }) => (
+    <CodeBlock {...props} />
+  ),
+};
+
 export const ArticleDetail: React.FC<ArticleDetailProps> = ({
-  source,
+  mdxSource,
   frontMatter,
 }) => {
   return (
@@ -36,7 +44,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
         </div>
       </header>
       <main>
-        <MDXRemote {...source} />
+        <MDXRemote {...mdxSource} components={mdxComponents} />
       </main>
     </>
   );

@@ -7,7 +7,6 @@ import {
   FaGithub,
   FaEnvelope,
   FaLinkedin,
-  FaStopwatch,
   FaTags,
   FaCalendar,
 } from "./Icons";
@@ -21,7 +20,6 @@ export {
   FaGithub,
   FaEnvelope,
   FaLinkedin,
-  FaStopwatch,
   FaTags,
   FaCalendar,
 };

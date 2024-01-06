@@ -5,6 +5,9 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { CONTENTS_PATH } from "@/constants";
 import { FrontMatter } from "@/types";
+import remarkGfm from "remark-gfm";
+import remarkToc from "remark-toc";
+import rehypeSlug from "rehype-slug";
 
 type Props = {
   slug: string;
@@ -22,6 +25,10 @@ export default async function ArticleDetailPage({ params }: { params: Props }) {
   const { content, data } = matter(source);
   const mdxSource = await serialize(content, {
     scope: data,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm, [remarkToc, { heading: "目次", maxDepth: 3 }]],
+      rehypePlugins: [rehypeSlug],
+    },
   });
 
   const frontMatter: FrontMatter = {
@@ -32,5 +39,5 @@ export default async function ArticleDetailPage({ params }: { params: Props }) {
   };
 
   // TODO: i11n対応する
-  return <ArticleDetail source={mdxSource} frontMatter={frontMatter} />;
+  return <ArticleDetail mdxSource={mdxSource} frontMatter={frontMatter} />;
 }

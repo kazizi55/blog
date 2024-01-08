@@ -1,4 +1,4 @@
-import { FaCalendar, FaStopwatch, FaTags } from "@/components/atoms/Icons";
+import { FaCalendar, FaTags } from "@/components/atoms/Icons";
 import Link from "next/link";
 
 export const ArticleListItem: React.FC = () => {
@@ -21,10 +21,6 @@ export const ArticleListItem: React.FC = () => {
           <div className="flex items-center gap-1">
             <FaCalendar />
             <span>2024-01-02</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <FaStopwatch />
-            <span>5分で読めます</span>
           </div>
           <div className="flex items-center gap-1">
             <FaTags />

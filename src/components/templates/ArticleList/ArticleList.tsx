@@ -1,15 +1,38 @@
-import { ArticleListItem } from "./ArticleListItem";
+import { ArticleListItem, ArticleListItemProps } from "./ArticleListItem";
 
-export const ArticleList: React.FC = () => {
+type ArticleListProps = {
+  articleListItems: ArticleListItemProps[];
+};
+
+export const ArticleList: React.FC<ArticleListProps> = (
+  { articleListItems }
+) => {
   return (
     <>
       <h1 className="mb-4">投稿一覧</h1>
       <main>
-        {Array(10)
-          .fill(0)
-          .map((_, i) => (
-            <ArticleListItem key={i} />
-          ))}
+        {(articleListItems.map(({
+          slug,
+          title,
+          published,
+          updated,
+          tags,
+          excerpt,
+          thumbnailPath,
+          thumbnailAlt
+        }) => (
+            <ArticleListItem
+              key={slug}
+              slug={slug}
+              title={title}
+              published={published}
+              updated={updated}
+              tags={tags}
+              excerpt={excerpt}
+              thumbnailPath={thumbnailPath}
+              thumbnailAlt={thumbnailAlt}
+            />
+          )))}
       </main>
     </>
   );

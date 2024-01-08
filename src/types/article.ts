@@ -3,4 +3,7 @@ export type FrontMatter = {
   published: string;
   updated?: string;
   tags: string[];
+  excerpt: string;
+  thumbnailPath: string;
+  thumbnailAlt: string;
 };

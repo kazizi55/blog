@@ -36,6 +36,9 @@ export default async function ArticleDetailPage({ params }: { params: Props }) {
     published: data.published,
     updated: data.updated,
     tags: data.tags,
+    excerpt: data.excerpt,
+    thumbnailPath: data.thumbnailPath,
+    thumbnailAlt: data.thumbnailAlt,
   };
 
   // TODO: i11n対応する

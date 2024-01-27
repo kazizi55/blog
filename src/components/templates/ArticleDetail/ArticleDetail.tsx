@@ -17,6 +17,15 @@ const mdxComponents = {
   code: (props: JSX.IntrinsicAttributes & { children?: ReactNode }) => (
     <CodeBlock {...props} />
   ),
+  h1: (props: JSX.IntrinsicAttributes & { children?: ReactNode }) => (
+    <h1 className="text-2xl font-bold my-2" {...props} />
+  ),
+  h2: (props: JSX.IntrinsicAttributes & { children?: ReactNode }) => (
+    <h2 className="text-xl font-bold my-2" {...props} />
+  ),
+  h3: (props: JSX.IntrinsicAttributes & { children?: ReactNode }) => (
+    <h3 className="text-lg font-bold my-2" {...props} />
+  ),
 };
 
 export const ArticleDetail: React.FC<ArticleDetailProps> = ({
